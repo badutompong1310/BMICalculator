@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HistoryView: View {
     
-    @Binding var savedBmi: [BodyMassIndex]
+    @Binding var savedBodyMassIndex: [BodyMassIndex]
     
     var body: some View {
-        List(savedBmi) { savedHistory in
-            HistoryItem(bmi: savedHistory)
+        List(savedBodyMassIndex) { bodyMassIndex in
+            HistoryItem(bodyMassIndex: bodyMassIndex)
         }
     }
 }
@@ -21,21 +21,21 @@ struct HistoryView: View {
 
 struct HistoryItem: View {
     
-    var bmi: BodyMassIndex
+    var bodyMassIndex: BodyMassIndex
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(bmi.savedAt.formatted(date: .abbreviated, time: .shortened))")
+            Text("\(bodyMassIndex.savedAt.formatted(date: .abbreviated, time: .shortened))")
                 .font(.body)
                 .foregroundColor(.gray)
             HStack {
-                Text("\(bmi.result, specifier: "%.2f")")
+                Text("\(bodyMassIndex.result, specifier: "%.2f")")
                     .font(.title)
                     .bold()
                 Spacer()
-                Text("\(bmi.scale())")
+                Text("\(bodyMassIndex.scale())")
                     .font(.title2)
-                    .foregroundColor(bmi.scaleColor())
+                    .foregroundColor(bodyMassIndex.scaleColor())
             }
             .padding(.top, -4)
         }
@@ -46,7 +46,7 @@ struct HistoryItem: View {
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(
-            savedBmi: .constant([
+            savedBodyMassIndex: .constant([
                 BodyMassIndex(savedAt: Date(), result: 18.0),
                 BodyMassIndex(savedAt: Date(), result: 24.0)
             ])

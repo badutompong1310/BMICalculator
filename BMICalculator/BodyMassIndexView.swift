@@ -30,11 +30,11 @@ struct BodyMassIndexView: View {
                     CalculatorView(
                         weight: $weightSlider,
                         height: $heightSlider,
-                        savedBmi: $savedHistories
+                        savedBodyMassIndex: $savedHistories
                     )
                 default :
                     HistoryView(
-                        savedBmi: $savedHistories
+                        savedBodyMassIndex: $savedHistories
                     )
                 }
                 

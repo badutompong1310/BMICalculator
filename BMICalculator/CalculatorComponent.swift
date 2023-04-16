@@ -10,7 +10,7 @@ import SwiftUI
 struct CalculatorView: View {
     @Binding var weight: Double
     @Binding var height: Double
-    @Binding var savedBmi: [BodyMassIndex]
+    @Binding var savedBodyMassIndex: [BodyMassIndex]
     
     var body: some View {
         VStack {
@@ -65,8 +65,8 @@ struct CalculatorView: View {
             }
             .padding(.top, 16)
             Button {
-                let newBmi = BodyMassIndex(savedAt: Date(), result: bmiResult())
-                savedBmi.insert(newBmi, at: 0)
+                let newBodyMassIndex = BodyMassIndex(savedAt: Date(), result: bmiResult())
+                savedBodyMassIndex.insert(newBodyMassIndex, at: 0)
             } label: {
                 Text("Save to history")
                     .frame(maxWidth: .infinity, maxHeight: 32)
@@ -115,6 +115,6 @@ struct CalculatorView: View {
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView(weight: .constant(67.0), height: .constant(177), savedBmi: .constant([]))
+        CalculatorView(weight: .constant(67.0), height: .constant(177), savedBodyMassIndex: .constant([]))
     }
 }

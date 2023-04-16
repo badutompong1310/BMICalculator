@@ -11,7 +11,7 @@
 		55E2DEEB29EBB736003CEDEF /* BodyMassIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DEEA29EBB736003CEDEF /* BodyMassIndexView.swift */; };
 		55E2DEED29EBB737003CEDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E2DEEC29EBB737003CEDEF /* Assets.xcassets */; };
 		55E2DEF029EBB737003CEDEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E2DEEF29EBB737003CEDEF /* Preview Assets.xcassets */; };
-		55E2DEFF29EBBB25003CEDEF /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DEFE29EBBB25003CEDEF /* BMI.swift */; };
+		55E2DEFF29EBBB25003CEDEF /* BodyMassIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DEFE29EBBB25003CEDEF /* BodyMassIndex.swift */; };
 		55E2DF0129EBBBA7003CEDEF /* HistoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DF0029EBBBA7003CEDEF /* HistoryComponent.swift */; };
 		55E2DF0329EBBBD8003CEDEF /* CalculatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DF0229EBBBD8003CEDEF /* CalculatorComponent.swift */; };
 /* End PBXBuildFile section */
@@ -22,7 +22,7 @@
 		55E2DEEA29EBB736003CEDEF /* BodyMassIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassIndexView.swift; sourceTree = "<group>"; };
 		55E2DEEC29EBB737003CEDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E2DEEF29EBB737003CEDEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		55E2DEFE29EBBB25003CEDEF /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		55E2DEFE29EBBB25003CEDEF /* BodyMassIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassIndex.swift; sourceTree = "<group>"; };
 		55E2DF0029EBBBA7003CEDEF /* HistoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryComponent.swift; sourceTree = "<group>"; };
 		55E2DF0229EBBBD8003CEDEF /* CalculatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				55E2DEE829EBB736003CEDEF /* BMICalculatorApp.swift */,
-				55E2DEFE29EBBB25003CEDEF /* BMI.swift */,
+				55E2DEFE29EBBB25003CEDEF /* BodyMassIndex.swift */,
 				55E2DEEA29EBB736003CEDEF /* BodyMassIndexView.swift */,
 				55E2DF0229EBBBD8003CEDEF /* CalculatorComponent.swift */,
 				55E2DF0029EBBBA7003CEDEF /* HistoryComponent.swift */,
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E2DEEB29EBB736003CEDEF /* BodyMassIndexView.swift in Sources */,
-				55E2DEFF29EBBB25003CEDEF /* BMI.swift in Sources */,
+				55E2DEFF29EBBB25003CEDEF /* BodyMassIndex.swift in Sources */,
 				55E2DF0129EBBBA7003CEDEF /* HistoryComponent.swift in Sources */,
 				55E2DF0329EBBBD8003CEDEF /* CalculatorComponent.swift in Sources */,
 				55E2DEE929EBB736003CEDEF /* BMICalculatorApp.swift in Sources */,
