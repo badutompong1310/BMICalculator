@@ -7,68 +7,65 @@
 
 import SwiftUI
 
-struct CalculatorView: View {
-    @Binding var weight: Double
-    @Binding var height: Double
-    @Binding var savedBmi: [BodyMassIndex]
+struct CalculatorComponent: View {
+    @ObservedObject var bodyMassIndexViewModel: BodyMassIndexViewModel
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Weight (kg)")
+                    Text(Prompt.Title.weight)
                         .font(.body)
                         .foregroundColor(.gray)
                     Spacer()
-                    Text("\(weight, specifier: "%.0f")")
+                    Text(bodyMassIndexViewModel.weight.twoTrailingZero())
                         .font(.title)
                         .bold()
                         .padding(.top, 4)
                 }
                 Slider(
-                    value: $weight,
+                    value: $bodyMassIndexViewModel.weight,
                     in: 35...150
                 )
                 Divider()
             }
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Height (cm)")
+                    Text(Prompt.Title.height)
                         .font(.body)
                         .foregroundColor(.gray)
                     Spacer()
-                    Text("\(height, specifier: "%.0f")")
+                    Text(bodyMassIndexViewModel.height.twoTrailingZero())
                         .font(.title)
                         .bold()
                         .padding(.top, 4)
                 }
                 Slider(
-                    value: $height,
+                    value: $bodyMassIndexViewModel.height,
                     in: 130...200
                 )
                 Divider()
             }
             .padding(.top, 16)
             HStack {
-                Text("Your Body Mass Index")
+                Text(Prompt.Title.yourBodyMassIndex)
                     .font(.body)
                     .foregroundColor(.gray)
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("\(bmiResult(), specifier: "%.2f")")
+                    Text(bodyMassIndexViewModel.result.twoTrailingZero())
                         .font(.largeTitle)
                         .bold()
-                    Text("\(bmiScale())")
+                    Text(bodyMassIndexViewModel.scale.rawValue)
                         .font(.body)
-                        .foregroundColor(bmiScaleColor())
+                        .foregroundColor(bodyMassIndexViewModel.scale.getColor())
                 }
             }
             .padding(.top, 16)
             Button {
-                let newBmi = BodyMassIndex(savedAt: Date(), result: bmiResult())
-                savedBmi.insert(newBmi, at: 0)
+                bodyMassIndexViewModel.saveResult()
             } label: {
-                Text("Save to history")
+                Text(Prompt.Button.saveToHistory)
                     .frame(maxWidth: .infinity, maxHeight: 32)
             }
             .buttonStyle(.borderedProminent)
@@ -77,44 +74,11 @@ struct CalculatorView: View {
         }
         .padding()
     }
-    
-    func bmiResult() -> Double {
-        return weight * 10_000 / (height * height)
-    }
-    
-    func bmiScale() -> String {
-        switch bmiResult() {
-        case 0..<18.5:
-            return "Underweight"
-        case 18.6..<24.9:
-            return "Normal"
-        case 25..<29.9:
-            return "Overweight"
-        case 30..<34.9:
-            return "Obese"
-        default:
-            return "Extremly Obese"
-        }
-    }
-    
-    func bmiScaleColor() -> Color {
-        switch bmiResult() {
-        case 0..<18.5:
-            return Color("blue")
-        case 18.6..<24.9:
-            return Color("green")
-        case 25..<29.9:
-            return Color("yellow")
-        case 30..<34.9:
-            return Color("orange")
-        default:
-            return Color("red")
-        }
-    }
 }
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView(weight: .constant(67.0), height: .constant(177), savedBmi: .constant([]))
+        CalculatorComponent(
+            bodyMassIndexViewModel: BodyMassIndexViewModel())
     }
 }
