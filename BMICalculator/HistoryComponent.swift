@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct HistoryComponent: View {
     
     @Binding var savedBodyMassIndex: [BodyMassIndex]
     
@@ -45,7 +45,7 @@ struct HistoryItem: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(
+        HistoryComponent(
             savedBodyMassIndex: .constant([
                 BodyMassIndex(savedAt: Date(), result: 18.0),
                 BodyMassIndex(savedAt: Date(), result: 24.0)

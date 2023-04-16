@@ -27,13 +27,13 @@ struct BodyMassIndexView: View {
                 .padding()
                 switch segmentIndex {
                 case 0:
-                    CalculatorView(
+                    CalculatorComponent(
                         weight: $weightSlider,
                         height: $heightSlider,
                         savedBodyMassIndex: $savedHistories
                     )
                 default :
-                    HistoryView(
+                    HistoryComponent(
                         savedBodyMassIndex: $savedHistories
                     )
                 }

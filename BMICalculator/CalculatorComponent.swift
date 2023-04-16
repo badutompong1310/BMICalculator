@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CalculatorView: View {
+struct CalculatorComponent: View {
     @Binding var weight: Double
     @Binding var height: Double
     @Binding var savedBodyMassIndex: [BodyMassIndex]
@@ -115,6 +115,6 @@ struct CalculatorView: View {
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView(weight: .constant(67.0), height: .constant(177), savedBodyMassIndex: .constant([]))
+        CalculatorComponent(weight: .constant(67.0), height: .constant(177), savedBodyMassIndex: .constant([]))
     }
 }
