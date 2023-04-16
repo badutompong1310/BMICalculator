@@ -15,7 +15,7 @@ class BodyMassIndexViewModel: ObservableObject {
     @Published var segment = 0
     @Published var weight = 76.0
     @Published var height = 166.0
-    @Published var savedHistories = [BodyMassIndex]()
+    @Published var savedBodyMassIndex = [BodyMassIndex]()
     
     var result: Double {
         return weight * 10_000 / (height * height)
@@ -44,10 +44,10 @@ class BodyMassIndexViewModel: ObservableObject {
     }
     
     func updateSavedHistories() {
-        savedHistories = bodyMassIndexRepository.savedHistories
+        self.savedBodyMassIndex = bodyMassIndexRepository.savedBodyMassIndex
     }
     
     func isEmptyHistory() -> Bool {
-        return bodyMassIndexRepository.savedHistories.count == 0
+        return bodyMassIndexRepository.savedBodyMassIndex.count == 0
     }
 }

@@ -27,9 +27,9 @@ struct HistoryComponent: View {
     }
     
     var historyList: some View {
-        List(bodyMassIndexViewModel.savedHistories) { savedHistory in
-            NavigationLink(value: savedHistory) {
-                HistoryRowComponent(bodyMassIndex: savedHistory)
+        List(bodyMassIndexViewModel.savedBodyMassIndex) { bodyMassIndex in
+            NavigationLink(value: bodyMassIndex) {
+                HistoryRowComponent(bodyMassIndex: bodyMassIndex)
             }
         }
         .navigationDestination(for: BodyMassIndex.self) { bodyMassIndex in

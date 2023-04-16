@@ -8,9 +8,9 @@
 import Foundation
 
 struct BodyMassIndexRepository {
-    var savedHistories :[BodyMassIndex] = []
+    var savedBodyMassIndex :[BodyMassIndex] = []
     
     mutating func add(_ bodyMassIndex: BodyMassIndex) {
-        savedHistories.insert(bodyMassIndex, at: 0)
+        savedBodyMassIndex.insert(bodyMassIndex, at: 0)
     }
 }
